@@ -1,0 +1,30 @@
+= TODO
+
+But principal : code une horloge basée sur les nombres cisterciens.
+
+//* Accueillir les spectateurs
+//* Présenter l'idée
+//* Présenter le concept des nombres cisterciens
+//  * https://fr.wikipedia.org/wiki/Syst%C3%A8me_cistercien_de_notation_num%C3%A9rique
+//* Identifier les 4 zones et leurs similarités
+//* Dessiner différents cas dans Inkscape
+//* Créer un index.html
+//* Créer un index.css
+//* Installer web dev server
+//* Initialiser un web component, expliquer les bases
+//* Ajouter LitElement, expliquer pourquoi
+* Installer le support de HMR
+//* Ajouter les 10 premiers exemples dans l'index.html
+//* Essayer de trouver une bonne logique pour les "bâtons"
+//* Ajouter les exemples dans l'index.html
+* Modifier le composant pour les 10, 100, et 1000
+//* Ajouter une boucle dans l'exemple
+* Tenter une transition/animation
+//* Créer le composant d'horloge
+
+Bonus :
+
+* On gère des timezones avec temporal
+* On build avec rollup
+* On publie sur npm
+* On l'utilise via un CDN sur genre jsbin

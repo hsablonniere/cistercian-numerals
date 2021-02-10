@@ -1,0 +1,17 @@
+{
+  "name": "cistercian-numerals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "wds --node-resolve -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.7"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
+}
