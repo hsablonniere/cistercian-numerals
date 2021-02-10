@@ -44,7 +44,6 @@ export class CistercianClock extends LitElement {
         :host {
           padding: 1rem;
           display: grid;
-          width: 300px;
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem;
         }
