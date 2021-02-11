@@ -32,8 +32,8 @@ export class CistercianClock extends LitElement {
   render () {
     return html`
       <cistercian-nb nb="${this._hours}"></cistercian-nb>
-        <cistercian-nb nb="${this._minutes}"></cistercian-nb>
-          <cistercian-nb nb="${this._seconds}"></cistercian-nb>
+      <cistercian-nb nb="${this._minutes}"></cistercian-nb>
+      <cistercian-nb nb="${this._seconds}"></cistercian-nb>
     `;
   }
 
@@ -42,7 +42,6 @@ export class CistercianClock extends LitElement {
       // language=CSS
       css`
         :host {
-          padding: 1rem;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem;

@@ -1,7 +1,17 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   font-family: sans-serif;
 }
 
 cistercian-clock {
-  width: 500px;
+  /*background-color: #eee;*/
+  width: 70vw;
 }

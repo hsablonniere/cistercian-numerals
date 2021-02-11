@@ -8,63 +8,46 @@ export class CistercianNb extends LitElement {
   static get properties () {
     return {
       nb: { type: Number },
-      _unite: { type: Object },
-      _dizaine: { type: Object },
     };
   }
 
   constructor () {
     super();
-    this._unite = { one: false, two: false, three: false, four: false, five: false };
-    this._dizaine = { one: false, two: false, three: false, four: false, five: false };
+    this.nb = 0;
   }
 
-  _getStates (nb) {
-    return {
-      one: [1, 5, 7, 9].includes(nb),
-      two: [2, 8, 9].includes(nb),
-      three: [6, 7, 8, 9].includes(nb),
-      four: [3].includes(nb),
-      five: [4, 5].includes(nb),
-    };
-  }
+  _renderPart (nb) {
 
-  update (changeProperties) {
-    super.update(changeProperties);
-    if (changeProperties.has('nb')) {
-      const unite = this.nb % 10;
-      this._unite = this._getStates(unite);
-      const dizaine = Math.floor(this.nb / 10);
-      this._dizaine = this._getStates(dizaine);
-    }
+    // https://en.wikipedia.org/wiki/File:Cistercian_digits_(vertical).svg
+    const state1 = [1, 5, 7, 9].includes(nb) ? '' : 'closed';
+    const state2 = [3].includes(nb) ? '' : 'closed';
+    const state3 = [2, 8, 9].includes(nb) ? '' : 'closed';
+    const state4 = [4, 5].includes(nb) ? '' : 'closed';
+    const state5 = [6, 7, 8, 9].includes(nb) ? '' : 'closed';
+
+    return svg`
+      <line class="line line-1 ${state1} short" x1="11" y1="1" x2="21" y2="1" />
+      <line class="line line-2 ${state2} long" x1="11" y1="1" x2="21" y2="11" />
+      <line class="line line-3 ${state3} short" x1="11" y1="11" x2="21" y2="11" />
+      <line class="line line-4 ${state4} long" x1="11" y1="11" x2="21" y2="1" />
+      <line class="line line-5 ${state5}" x1="21" y1="1" x2="21" y2="11" />
+    `;
   }
 
   render () {
-    return svg`
-      <svg
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   width="22"
-   height="32"
-   viewBox="-1 -1 21 31"
-   version="1.1">
-  <path d="M 10.5,0 v 30" id="the-barre-du-milieu"/>
-  <g id="unite">
-    <path d="M 10,0 h 10" id="one" state="${this._unite.one ? 'yes' : 'no'}" />
-    <path d="M 10,10 h 10" id="two" state="${this._unite.two ? 'yes' : 'no'}" />
-    <path d="M 20,0 v 10" id="three" state="${this._unite.three ? 'yes' : 'no'}" />
-    <path d="M 10,0 l 10,10" id="four" state="${this._unite.four ? 'yes' : 'no'}" />
-    <path d="M 20,0 l -10,10" id="five" state="${this._unite.five ? 'yes' : 'no'}" />
-  </g>
-  <g id="dizaine">
-    <path d="M 10,0 h 10" id="one" state="${this._dizaine.one ? 'yes' : 'no'}" />
-    <path d="M 10,10 h 10" id="two" state="${this._dizaine.two ? 'yes' : 'no'}" />
-    <path d="M 20,0 v 10" id="three" state="${this._dizaine.three ? 'yes' : 'no'}" />
-    <path d="M 10,0 l 10,10" id="four" state="${this._dizaine.four ? 'yes' : 'no'}" />
-    <path d="M 20,0 l -10,10" id="five" state="${this._dizaine.five ? 'yes' : 'no'}" />
-  </g>
-</svg>
 
+    const units = Array
+      .from(new Array(4))
+      .map(($, i) => Math.floor(this.nb / 10 ** i) % 10);
+
+    return svg`
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="32" viewBox="0 0 22 32">
+        <g class="unit unit-0">${this._renderPart(units[0])}</g>
+        <g class="unit unit-1">${this._renderPart(units[1])}</g>
+        <g class="unit unit-2">${this._renderPart(units[2])}</g>
+        <g class="unit unit-3">${this._renderPart(units[3])}</g>
+        <line x1="11" y1="1" x2="11" y2="31" />
+      </svg>
     `;
   }
 
@@ -81,41 +64,51 @@ export class CistercianNb extends LitElement {
           width: 100%;
         }
 
-        path {
-          stroke: #000;
-          stroke-width: 1px;
-          stroke-linecap: square;
-          stroke-linejoin: miter;
-          transition: 200ms all linear;
-        }
-
-        #one {
-          stroke: #f00;
-        }
-
-        #two {
-          stroke: #0f0;
-        }
-
-        #three {
-          stroke: #00F;
-        }
-
-        #four {
-          stroke: purple;
-        }
-
-        #five {
-          stroke: brown;
-        }
-
-        path[state="no"] {
-          display: none;
-        }
-
-        #dizaine {
-          transform: scale(-1, 1);
+        .unit {
           transform-origin: center center;
+        }
+
+        .unit-1 {
+          transform: scale(-1, 1);
+        }
+
+        .unit-2 {
+          transform: scale(1, -1);
+        }
+
+        .unit-3 {
+          transform: scale(-1, -1);
+        }
+
+        line {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 1px;
+          stroke: #000;
+          transition: 150ms all ease-in-out;
+        }
+
+        .short {
+          --lg: 10;
+        }
+
+        .long {
+          --lg: 15;
+        }
+
+        .short,
+        .long {
+          stroke-dasharray: var(--lg) var(--lg);
+          stroke-dashoffset: 0;
+        }
+
+        .short.closed,
+        .long.closed {
+          stroke-dashoffset: var(--lg);
+        }
+
+        .line-5.closed {
+          transform: translateX(-10px);
         }
       `,
     ];
