@@ -1,4 +1,4 @@
-import { css, LitElement, svg } from 'lit-element';
+import { css, LitElement, svg } from 'lit';
 
 /**
  * TODO DOCS
@@ -84,7 +84,7 @@ export class CistercianNb extends LitElement {
           stroke-linecap: round;
           stroke-linejoin: round;
           stroke-width: 1px;
-          stroke: #000;
+          stroke: var(--cistercian-color-0, #000);
           transition: 150ms all ease-in-out;
         }
 
@@ -109,6 +109,26 @@ export class CistercianNb extends LitElement {
 
         .line-5.closed {
           transform: translateX(-10px);
+        }
+
+        .line-1 {
+          stroke: var(--cistercian-color-1, #0019a7dd);
+        }
+
+        .line-2 {
+          stroke: var(--cistercian-color-2, #751056dd);
+        }
+
+        .line-3 {
+          stroke: var(--cistercian-color-3, #007229dd);
+        }
+
+        .line-4 {
+          stroke: var(--cistercian-color-4, #db241fdd);
+        }
+
+        .line-5 {
+          stroke: var(--cistercian-color-5, #fdcd01dd);
         }
       `,
     ];

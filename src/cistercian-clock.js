@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit-element';
+import { css, html, LitElement } from 'lit';
 import './cistercian-nb.js';
 
 /**
@@ -8,19 +8,31 @@ export class CistercianClock extends LitElement {
 
   static get properties () {
     return {
+      date: { type: Boolean, reflect: true },
+      _year: { type: Number },
+      _month: { type: Number },
+      _day: { type: Number },
       _hours: { type: Number },
       _minutes: { type: Number },
       _seconds: { type: Number },
     };
   }
 
+  constructor () {
+    super();
+    this.date = false;
+  }
+
   connectedCallback () {
     super.connectedCallback();
     this._id = setInterval(() => {
-      const date = new Date();
-      this._hours = date.getHours();
-      this._minutes = date.getMinutes();
-      this._seconds = date.getSeconds();
+      const currentDatetime = new Date();
+      this._year = currentDatetime.getFullYear();
+      this._month = currentDatetime.getMonth() + 1;
+      this._day = currentDatetime.getDate();
+      this._hours = currentDatetime.getHours();
+      this._minutes = currentDatetime.getMinutes();
+      this._seconds = currentDatetime.getSeconds();
     }, 500);
   }
 
@@ -31,6 +43,11 @@ export class CistercianClock extends LitElement {
 
   render () {
     return html`
+      ${this.date ? html`
+        <cistercian-nb nb="${this._year}"></cistercian-nb>
+        <cistercian-nb nb="${this._month}"></cistercian-nb>
+        <cistercian-nb nb="${this._day}"></cistercian-nb>
+      ` : ''}
       <cistercian-nb nb="${this._hours}"></cistercian-nb>
       <cistercian-nb nb="${this._minutes}"></cistercian-nb>
       <cistercian-nb nb="${this._seconds}"></cistercian-nb>
@@ -44,7 +61,11 @@ export class CistercianClock extends LitElement {
         :host {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
+          gap: 2rem;
+        }
+
+        :host([date]) {
+          grid-template-columns: repeat(6, 1fr);
         }
       `,
     ];
