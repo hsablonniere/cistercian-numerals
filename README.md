@@ -1,6 +1,6 @@
 # Cicstercian numerals components
 
-A collection of web components to display cistercian numerals.
+A collection of web components to display [cistercian numerals](https://en.wikipedia.org/wiki/Cistercian_numerals).
 
 ## Usage (or install)
 
@@ -120,3 +120,21 @@ If you just want to display the current date and time (year, month, day, hours, 
 ```html
 <cistercian-clock date></cistercian-clock>
 ```
+
+## About this project
+
+Back in January 2021, I saw a tweet talking about [cistercian numerals](https://en.wikipedia.org/wiki/Cistercian_numerals).
+I was very intrigued.
+
+A week later, I saw someone who made a React component for it: https://twitter.com/aqandrew/status/1349762018639638528
+
+I thought it would be a fun side projet to create a web component for this and then reuse the single number component to create a clock.
+I took this opportunity to try Twitch and wrote the code for the first version live with some help from the chat.
+At the end of the stream, the component was mostly working but no animation and the design was a bit clunky.
+I improved it over the next few weeks.
+
+Since then, I saw a few fun projects with cistercian numerals:
+
+* Clairvo, a proof-of-concept font that uses OpenType Layout to implement cistercian numerals: https://github.com/TiroTypeworks/Clairvo
+* Cistercian SVG by Adrian Roselli: https://adrianroselli.com/2021/02/cistercian-svg.html
+* React based experiment by Maciej Ziarkowski: https://mz8i.com/cistercian
