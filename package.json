@@ -1,6 +1,6 @@
 {
   "name": "cistercian-numerals",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A collection of web components to display cistercian numerals",
   "main": "dist/cistercian-numerals.js",
   "author": "Hubert Sablonnière",
