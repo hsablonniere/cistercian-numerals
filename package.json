@@ -2,16 +2,27 @@
   "name": "cistercian-numerals",
   "version": "1.0.0",
   "description": "A collection of web components to display cistercian numerals",
-  "main": "index.js",
+  "main": "dist/cistercian-numerals.js",
   "author": "Hubert Sablonnière",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "rollup -c rollup/rollup-npm.config.js",
+    "prepack": "npm run build",
     "start:dev": "wds --node-resolve -w"
   },
   "dependencies": {
     "lit": "^2.0.0-pre.1"
   },
   "devDependencies": {
-    "@web/dev-server": "^0.1.7"
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@web/dev-server": "^0.1.8",
+    "babel-plugin-template-html-minifier": "^4.1.0",
+    "rollup": "^2.41.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
