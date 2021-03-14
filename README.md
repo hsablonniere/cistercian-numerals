@@ -2,7 +2,57 @@
 
 A collection of web components to display cistercian numerals.
 
-## `<cistercian-number>`
+## Usage (or install)
+
+You can directly load these components in your web page using a smart CDN like [jspm](https://jspm.org/), [unpkg](https://unpkg.com/) or [Skypack](https://www.skypack.dev/).
+
+⚠️ WARNING: Remember that you need to trust this project *AND* those smart CDNs before loading some third party code like that.
+
+### Load from jspm
+
+To load the components from jspm, add this to your `<head>`:
+
+```html
+<script type="module" src="https://unpkg.com/cistercian-numerals"></script>
+```
+
+### Load from unpkg
+
+To load the components from unpkg, add this to your `<head>`:
+
+```html
+<script type="module" src="https://cdn.skypack.dev/cistercian-numerals"></script>
+```
+
+### Load from skypack
+
+To load the components from skypack, add this to your `<head>`:
+
+```html
+<script type="module" src="https://jspm.dev/cistercian-numerals"></script>
+```
+
+### Install from npm
+
+You can also install the components in your project with npm:
+
+```bash
+npm install cistercian-numerals
+```
+
+Then, you will need to import the file in your source:
+
+```js
+import 'cistercian-numerals'
+```
+
+You will need some kind of bundler or equivalent tool to resolve the bare identifier `cistercian-numerals` to a local file.
+
+## Components
+
+### `<cistercian-number>`
+
+This component displays one number with cistercian numerals.
 
 Use the `value` attribute to specify the number you want to display:
 
@@ -49,7 +99,9 @@ cistercian-number {
 }
 ```
 
-## `<cistercian-clock>`
+### `<cistercian-clock>`
+
+This component displays a live clock using cistercian numerals.
 
 If you just want to display the current time (hours, minutes, seconds):
 
