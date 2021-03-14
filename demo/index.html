@@ -4,13 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Cistercian numerals</title>
   <script type="module" src="../src/cistercian-clock.js"></script>
+  <style>
+    .with-colors {
+      --cistercian-color-0: #000;
+      --cistercian-color-1: #0019a7dd;
+      --cistercian-color-2: #751056dd;
+      --cistercian-color-3: #007229dd;
+      --cistercian-color-4: #db241fdd;
+      --cistercian-color-5: #fdcd01dd;
+    }
+  </style>
 </head>
 <body>
 
-<cistercian-clock></cistercian-clock>
+<h1>Cistercian numerals</h1>
+
+<h2>Inside some text</h2>
+
+<p>
+  <em>When used inside a paragraph of text, the number should be size and aligned a bit like a japanese katakana.</em>
+</p>
+
+<p style="font-family: serif">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<p style="font-family: sans-serif">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<p style="font-family: Arial, sans-serif">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<p style="font-family: monospace">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<h2>Using current color</h2>
+
+<p style="font-family: sans-serif; color: blue">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<p style="font-family: sans-serif; color: darkgreen">
+  Lorem ipsum dolor sit amet,
+  <cistercian-number value="1972" inline></cistercian-number>
+  consectetur adipiscing elit. Quisque feugiat dui at leo porta dignissim. Etiam ut purus ultrices, pulvinar tellus quis, cursus massa. Mauris dignissim accumsan ex, at vestibulum lectus fermentum id. Quisque nec magna arcu. Quisque in metus sed erat sodales euismod eget id purus. Sed sagittis rhoncus mauris. Ut sit amet urna ac nunc semper porta. Nam ut felis eu velit luctus rutrum. Nam leo nisl, molestie a varius non, ullamcorper sit amet tortor. Donec in convallis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent hendrerit venenatis erat, eu malesuada nulla viverra eu. Curabitur porta risus augue, non rutrum lectus hendrerit a.
+</p>
+
+<h2>In a clock</h2>
+
+<h3>Time only</h3>
+
+<cistercian-clock style="font-size: 10em; --cistercian-width: 2px;"></cistercian-clock>
+
+<h3>Time only (and multiple colors)</h3>
+
+<cistercian-clock class="with-colors" style="--cistercian-width: 2px; font-size: 10em"></cistercian-clock>
+
+<h3>Time only but no seconds (and multiple colors)</h3>
+
+<cistercian-clock no-seconds class="with-colors" style="--cistercian-width: 2px; font-size: 10em"></cistercian-clock>
+
+<h3>Date and time (and multiple colors)</h3>
+
+<cistercian-clock date class="with-colors" style="--cistercian-width: 2px; font-size: 10em"></cistercian-clock>
 
 </body>
 </html>

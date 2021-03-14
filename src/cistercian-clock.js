@@ -1,14 +1,19 @@
 import { css, html, LitElement } from 'lit';
-import './cistercian-nb.js';
+import './cistercian-number.js';
 
 /**
- * TODO DOCS
+ * A custom element to display a clock with cistercian numerals.
+ *
+ * 🎨 default CSS display: `block`
+ *
+ * @prop {Boolean} date - Enables displaying date (year-month-day) before displaying time.
  */
 export class CistercianClock extends LitElement {
 
   static get properties () {
     return {
       date: { type: Boolean, reflect: true },
+      noSeconds: { type: Boolean, attribute: 'no-seconds', reflect: true },
       _year: { type: Number },
       _month: { type: Number },
       _day: { type: Number },
@@ -21,6 +26,7 @@ export class CistercianClock extends LitElement {
   constructor () {
     super();
     this.date = false;
+    this.noSeconds = false;
   }
 
   connectedCallback () {
@@ -44,13 +50,15 @@ export class CistercianClock extends LitElement {
   render () {
     return html`
       ${this.date ? html`
-        <cistercian-nb nb="${this._year}"></cistercian-nb>
-        <cistercian-nb nb="${this._month}"></cistercian-nb>
-        <cistercian-nb nb="${this._day}"></cistercian-nb>
+        <cistercian-number value="${this._year}"></cistercian-number>
+        <cistercian-number value="${this._month}"></cistercian-number>
+        <cistercian-number value="${this._day}"></cistercian-number>
       ` : ''}
-      <cistercian-nb nb="${this._hours}"></cistercian-nb>
-      <cistercian-nb nb="${this._minutes}"></cistercian-nb>
-      <cistercian-nb nb="${this._seconds}"></cistercian-nb>
+      <cistercian-number value="${this._hours}"></cistercian-number>
+      <cistercian-number value="${this._minutes}"></cistercian-number>
+      ${!this.noSeconds ? html`
+        <cistercian-number value="${this._seconds}"></cistercian-number>
+      ` : ''}
     `;
   }
 
@@ -59,13 +67,12 @@ export class CistercianClock extends LitElement {
       // language=CSS
       css`
         :host {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+          align-items: center;
+          display: flex;
         }
 
-        :host([date]) {
-          grid-template-columns: repeat(6, 1fr);
+        cistercian-number:not(:last-child) {
+          margin-right: 0.1em;
         }
       `,
     ];
