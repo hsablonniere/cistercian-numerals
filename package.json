@@ -6,6 +6,7 @@
   "author": "Hubert Sablonnière",
   "license": "MIT",
   "files": [
+    "src",
     "dist"
   ],
   "scripts": {

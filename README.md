@@ -40,13 +40,22 @@ You can also install the components in your project with npm:
 npm install cistercian-numerals
 ```
 
-Then, you will need to import the file in your source:
+Then, you will need to import the components in your source:
 
 ```js
-import 'cistercian-numerals'
+import 'cistercian-numerals';
 ```
 
-You will need some kind of bundler or equivalent tool to resolve the bare identifier `cistercian-numerals` to a local file.
+NOTES:
+
+* You will need some kind of bundler or equivalent tool to resolve the bare identifier `cistercian-numerals` to a local file.
+* This will import a bundle containing all the components + LitElement's sources.
+
+You can also import the raw source if you just want the `<cistercian-number>` component or even if you're also using LitElement:
+
+```js
+import 'cistercian-numerals/src/cistercian-number.js';
+```
 
 ## Components
 
