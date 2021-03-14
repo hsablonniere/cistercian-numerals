@@ -7,14 +7,14 @@ A collection of web components to display cistercian numerals.
 Use the `value` attribute to specify the number you want to display:
 
 ```html
-<cistercian-number value="1972">
+<cistercian-number value="1972"></cistercian-number>
 ```
 
 By default, it will display the image as a block.
 If you want to display the number inside a paragraph of text, use the `inline` attribute. It should be sized and aligned correctly with the text:
 
 ```html
-Some text <cistercian-number value="1972" inline> around the number.
+Some text <cistercian-number value="1972" inline></cistercian-number> around the number.
 ```
 
 By default, the line use the same color as the text.
