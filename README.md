@@ -15,7 +15,7 @@ You can directly load these components in your web page using a smart CDN like [
 To load the components from jspm, add this to your `<head>`:
 
 ```html
-<script type="module" src="https://unpkg.com/cistercian-numerals"></script>
+<script type="module" src="https://jspm.dev/cistercian-numerals"></script>
 ```
 
 ### Load from unpkg
@@ -23,7 +23,7 @@ To load the components from jspm, add this to your `<head>`:
 To load the components from unpkg, add this to your `<head>`:
 
 ```html
-<script type="module" src="https://cdn.skypack.dev/cistercian-numerals"></script>
+<script type="module" src="https://unpkg.com/cistercian-numerals"></script>
 ```
 
 ### Load from skypack
@@ -31,7 +31,7 @@ To load the components from unpkg, add this to your `<head>`:
 To load the components from skypack, add this to your `<head>`:
 
 ```html
-<script type="module" src="https://jspm.dev/cistercian-numerals"></script>
+<script type="module" src="https://cdn.skypack.dev/cistercian-numerals"></script>
 ```
 
 ### Install from npm
