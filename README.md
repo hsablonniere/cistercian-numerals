@@ -2,6 +2,8 @@
 
 A collection of web components to display [cistercian numerals](https://en.wikipedia.org/wiki/Cistercian_numerals).
 
+You can see a live demo in this article: [A clock based on Cistercian numerals](https://www.hsablonniere.com/a-clock-based-on-cistercian-numerals--hptit8/).
+
 ## Usage (or install)
 
 You can directly load these components in your web page using a smart CDN like [jspm](https://jspm.org/), [unpkg](https://unpkg.com/) or [Skypack](https://www.skypack.dev/).
