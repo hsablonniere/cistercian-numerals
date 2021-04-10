@@ -4,6 +4,7 @@
   "description": "A collection of web components to display cistercian numerals",
   "main": "dist/cistercian-numerals.js",
   "author": "Hubert Sablonnière",
+  "repository": "github:hsablonniere/cistercian-numerals",
   "license": "MIT",
   "files": [
     "src",
